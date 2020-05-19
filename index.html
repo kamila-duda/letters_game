@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>klawiatura</title>
+
+	<meta name="description" content="Opis w Google">
+	<meta name="keywords" content="słowa, kluczowe, wypisane, po, porzecinku">
+
+	<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+	<main class="container">
+
+		<div class="game__container">
+			<h1 class="game__title">Gra w literki</h1>
+			<button class="start__button js-start__button">START</button>
+			<button class="restart__button js-restart__button">RESTART</button>
+			<div class="display__container">
+				<div class="licznik--dobrze">Dobrze
+					<div id="good">0</div>
+				</div>
+				<div class="letter__container" id="litera"></div>
+				<div class="licznik--zle">Źle
+					<div id="bad">0</div>
+				</div>
+			</div>
+
+
+			<div id="timer">0 sec.</div>
+			<div class="game__end--loss">
+				<p>Popełniłeś 5 błędów. Koniec gry.</p>
+				<div class="game__end--button" id="lossClose">Zamknij</div>
+			</div>
+			<div class="game__end--win">
+				<p>Brawo! 20 poprawnych odpowiedzi.Twój czas: <span class="game__time"></span></p>
+				<div class="game__end--button" id="winClose">Zamknij</div>
+			</div>
+		</div>
+	</main>
+
+
+	<script src="script.js"></script>
+</body>
+
+</html>
