@@ -94,6 +94,8 @@ document.getElementById("winClose").addEventListener("click", function () {
     startGame = false;
     beginning();
 });
-
+if(window.matchMedia('(max-device-width: 960px)').matches){
+    start__button.focus();
+};
 
 
