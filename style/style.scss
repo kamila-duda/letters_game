@@ -9,7 +9,7 @@ body {
     display: flex;
     height: min-content;
     min-height: 100vh;
-    background-image: url(/images/cute.jpg);
+    background-image: url("../images/cute.jpg");
     background-color: pink;
     background-size: cover;
     font-family: arial;
@@ -87,7 +87,7 @@ body {
 }
 .licznik--zle {
     @extend .licznik;
-    background-image: url(/images/0bad.png);
+    background-image: url("../images/0bad.png");
 }
 #timer {
     background-color: #f76fca;

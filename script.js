@@ -26,7 +26,7 @@ document.addEventListener('keypress', function (e) {
         } else {
             no.play();
             bad += 1;
-            document.querySelector(".licznik--zle").style.backgroundImage = "url(/images/" + bad + "bad.png)";
+            document.querySelector(".licznik--zle").style.backgroundImage = "url(../images/" + bad + "bad.png)";
             document.getElementById("bad").innerHTML = bad;
             if (bad > 4){
                 
@@ -57,7 +57,7 @@ function beginning(){
     document.getElementById("litera").innerHTML = "";
     document.getElementById("good").innerHTML = "0";
     document.getElementById("bad").innerHTML = "0";
-    document.querySelector(".licznik--zle").style.backgroundImage = "url(/images/0bad.png)";
+    document.querySelector(".licznik--zle").style.backgroundImage = "url(../images/0bad.png)";
     start__button.style.display = "unset";
     restart__button.style.display = "none";
 }
