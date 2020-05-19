@@ -15,24 +15,30 @@ document.addEventListener('keypress', function (e) {
         let bad = parseInt(document.getElementById("bad").innerHTML);
         if (ascii == clickLetterUpper) {
             good += 1;
+            let height = good * 5;
             document.getElementById("good").innerHTML = good;
-        if(good>19){
-            let time = document.getElementById("timer").innerHTML;
-            document.querySelector(".game__end--win").style.display="unset";
-            document.querySelector(".game__time").innerHTML=time;
+            document.querySelector(".grow-green").style.height = height + "%";
+
+            if (good > 19) {
+                let time = document.getElementById("timer").innerHTML;
+                document.querySelector(".game__end--win").style.display = "unset";
+                document.querySelector(".game__time").innerHTML = time;
                 clearInterval(odliczanie);
                 win.play();
-        }
+                startGame = false;
+            }
         } else {
             no.play();
             bad += 1;
-            document.querySelector(".licznik--zle").style.backgroundImage = "url(./images/" + bad + "bad.png)";
+            let height = bad * 20;
             document.getElementById("bad").innerHTML = bad;
-            if (bad > 4){
-                
-                document.querySelector(".game__end--loss").style.display="unset";
+            document.querySelector(".grow-red").style.height = height + "%";
+            if (bad > 4) {
+
+                document.querySelector(".game__end--loss").style.display = "unset";
                 clearInterval(odliczanie);
                 loss.play();
+                startGame = false;
             }
         }
         losuj_litere();
@@ -52,12 +58,13 @@ function losuj_litere() {
     document.getElementById("litera").innerHTML = letter;
 
 };
-function beginning(){
+function beginning() {
     document.getElementById("timer").innerHTML = "0 sec."
     document.getElementById("litera").innerHTML = "";
     document.getElementById("good").innerHTML = "0";
     document.getElementById("bad").innerHTML = "0";
-    document.querySelector(".licznik--zle").style.backgroundImage = "url(./images/0bad.png)";
+    document.querySelector(".grow-green").style.height = "0%";
+    document.querySelector(".grow-red").style.height = "0%";
     start__button.style.display = "unset";
     restart__button.style.display = "none";
 }
@@ -74,16 +81,16 @@ start__button.addEventListener("click", function () {
 restart__button.addEventListener("click", function () {
     startGame = false;
     clearInterval(odliczanie);
-    
+
     beginning();
 });
 document.getElementById("lossClose").addEventListener("click", function () {
-    document.querySelector(".game__end--loss").style.display="none";
+    document.querySelector(".game__end--loss").style.display = "none";
     startGame = false;
     beginning();
 });
 document.getElementById("winClose").addEventListener("click", function () {
-    document.querySelector(".game__end--win").style.display="none";
+    document.querySelector(".game__end--win").style.display = "none";
     startGame = false;
     beginning();
 });

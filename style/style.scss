@@ -24,6 +24,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 991px) {
+        width: 98vw;
+        height: 98vh;
+        margin:auto;
+    }
+
 }
 .game__title {
     text-transform: uppercase;
@@ -44,6 +50,9 @@ body {
     &:hover {
         background-color: #f85db4;
     }
+    @media (max-width: 991px) {
+width: 80vw;
+    }
 }
 .start__button {
     @extend .button;
@@ -51,6 +60,18 @@ body {
 .restart__button {
     @extend .button;
     display: none;
+}
+.display__container {
+    display: flex;
+    justify-content: space-between;
+    width: 30vw;
+    height: 200px;
+    margin-top: 15px;
+    position: relative;
+    @media (max-width: 991px) {
+        width: 80vw;
+        height: 100px;
+    }
 }
 .letter__container {
     width: 15vw;
@@ -62,13 +83,10 @@ body {
     font-weight: bold;
     background-color: yellow;
     border-radius: 5px;
-}
-.display__container {
-    display: flex;
-    justify-content: space-between;
-    width: 30vw;
-    height: 200px;
-    margin-top: 15px;
+    @media (max-width: 991px) {
+        width: 30vw;
+        height: 100px;
+    }
 }
 .licznik {
     width: 7vw;
@@ -79,16 +97,29 @@ body {
     justify-content: center;
     border: 2px solid #fff;
     border-radius: 5px;
-
+    position: relative;
     font-size: 18px;
+    z-index: 10;
+    @media (max-width: 991px) {
+        width: 20vw;
+    }
 }
-.licznik--dobrze {
-    @extend .licznik;
+.grow-green {
+    position: absolute;
+    width: 100%;
+    height: 0%;
     background-color: yellowgreen;
+    bottom: 0;
+    z-index: -1;
 }
-.licznik--zle {
-    @extend .licznik;
-    background-image: url("../images/0bad.png");
+
+.grow-red {
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    background-color: red;
+    bottom: 0;
+    z-index: -1;
 }
 #timer {
     background-color: #f76fca;
@@ -98,6 +129,9 @@ body {
     margin-top: 15px;
     width: 30vw;
     border-radius: 5px;
+    @media (max-width: 991px) {
+        width: 80vw;
+    }
 }
 .game__end {
     position: absolute;
@@ -113,22 +147,26 @@ body {
     outline-offset: -30px;
     border-radius: 5px;
     display: none;
+    @media (max-width: 991px) {
+        width: 80vw;
+    }
 }
-.game__end--button{
-position: absolute;
-bottom: 60px;
-left: 0;
-right: 0;
-cursor: pointer;
-font-size: 35px;
-font-weight: bold;
-
+.game__end--button {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: bold;
 }
-.game__end--loss{
+.game__end--loss {
     @extend .game__end;
-    background-color: #CF3B3B;
+    background-color: #cf3b3b;
+    z-index: 20;
 }
-.game__end--win{
+.game__end--win {
     @extend .game__end;
-    background-color: #9ACD32;
+    background-color: #9acd32;
+    z-index: 20;
 }
