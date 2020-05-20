@@ -4,7 +4,8 @@ const restart__button = document.querySelector(".js-restart__button");
 const no = new Audio("no.wav");
 const loss = new Audio("przegrana.wav");
 const win = new Audio("wygrana.mp3");
-const hidden = document.getElementById("hidden").style.display="none";
+const hidden = document.getElementById("hidden");
+hidden.style.display="none";
 
 
 document.addEventListener('keypress', function (e) {
