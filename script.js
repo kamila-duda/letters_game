@@ -5,7 +5,7 @@ const no = new Audio("no.wav");
 const loss = new Audio("przegrana.wav");
 const win = new Audio("wygrana.mp3");
 const hidden = document.getElementById("hidden");
-hidden.style.display="none";
+hidden.style.visibility="hidden";
 
 
 document.addEventListener('keypress', function (e) {
@@ -37,7 +37,6 @@ document.addEventListener('keypress', function (e) {
             document.getElementById("bad").innerHTML = bad;
             document.querySelector(".grow-red").style.height = height + "%";
             if (bad > 4) {
-
                 document.querySelector(".game__end--loss").style.display = "unset";
                 clearInterval(odliczanie);
                 loss.play();
@@ -91,12 +90,12 @@ restart__button.addEventListener("click", function () {
     beginning();
 });
 document.getElementById("lossClose").addEventListener("click", function () {
-    document.querySelector(".game__end--loss").style.display = "none";
+    const loss = document.querySelector(".game__end--loss").style.display = "none";
     startGame = false;
     beginning();
 });
 document.getElementById("winClose").addEventListener("click", function () {
-    document.querySelector(".game__end--win").style.display = "none";
+    const win = document.querySelector(".game__end--win").style.display = "none";
     startGame = false;
     beginning();
 });
