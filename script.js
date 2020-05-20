@@ -5,7 +5,6 @@ const no = new Audio("no.wav");
 const loss = new Audio("przegrana.wav");
 const win = new Audio("wygrana.mp3");
 const hidden = document.getElementById("hidden");
-hidden.style.visibility="hidden";
 
 
 document.addEventListener('keypress', function (e) {
@@ -80,7 +79,6 @@ start__button.addEventListener("click", function () {
     start__button.style.display = "none";
     restart__button.style.display = "unset";
     hidden.focus();
-    hidden.click();
     
 });
 restart__button.addEventListener("click", function () {

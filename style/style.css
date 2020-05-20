@@ -238,4 +238,9 @@ body {
   background-color: #9acd32;
   z-index: 20;
 }
+
+#hidden {
+  position: fixed;
+  left: 120%;
+}
 /*# sourceMappingURL=style.css.map */
