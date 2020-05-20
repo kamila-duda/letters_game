@@ -4,6 +4,8 @@ const restart__button = document.querySelector(".js-restart__button");
 const no = new Audio("no.wav");
 const loss = new Audio("przegrana.wav");
 const win = new Audio("wygrana.mp3");
+const hidden = document.getElementById("hidden").style.display="none";
+
 
 document.addEventListener('keypress', function (e) {
     if (startGame == true) {
@@ -77,6 +79,9 @@ start__button.addEventListener("click", function () {
     losuj_litere();
     start__button.style.display = "none";
     restart__button.style.display = "unset";
+    hidden.focus();
+    hidden.click();
+    
 });
 restart__button.addEventListener("click", function () {
     startGame = false;
@@ -95,7 +100,9 @@ document.getElementById("winClose").addEventListener("click", function () {
     beginning();
 });
 if(window.matchMedia('(max-device-width: 960px)').matches){
-    start__button.focus();
+   // start__button.focus();
+   alert("ok");
+   
 };
 
 
