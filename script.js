@@ -6,25 +6,25 @@ const loss = new Audio("przegrana.wav");
 const win = new Audio("wygrana.mp3");
 
 
-if(window.matchMedia('(max-device-width: 960px)').matches){
+if (window.matchMedia('(max-device-width: 960px)').matches){
     const container = document.querySelector(".container");
     let input = document.createElement("INPUT");
     input.setAttribute('type', 'text');
-    input.className="hidden";
-    input.focus();
+    input.className = "hidden";
     container.appendChild(input);
-    if (startGame == true) {
+    document.addEventListener("input", function(){
+    if (startGame == true) {//plus input chyba nie pusty?: !input==""
         let ascii = document.getElementById("litera").innerHTML;
-        let inputLetter = document.querySelector(".hidden").innerHTML;
-        inputLetter.style.textTransform="uppercase";
+        let inputLetter = document.querySelector(".hidden").value;
+        inputLetter = inputLetter.toUpperCase();
         let good = parseInt(document.getElementById("good").innerHTML);
         let bad = parseInt(document.getElementById("bad").innerHTML);
-        if(ascii==inputLetter){
+        if (ascii == inputLetter) {
             good += 1;
             let height = good * 5;
             document.getElementById("good").innerHTML = good;
             document.querySelector(".grow-green").style.height = height + "%";
-
+            document.querySelector(".hidden").value="";
             if (good > 19) {
                 let time = document.getElementById("timer").innerHTML;
                 document.querySelector(".game__end--win").style.display = "unset";
@@ -36,6 +36,7 @@ if(window.matchMedia('(max-device-width: 960px)').matches){
         } else {
             no.play();
             bad += 1;
+            document.querySelector(".hidden").value="";
             let height = bad * 20;
             document.getElementById("bad").innerHTML = bad;
             document.querySelector(".grow-red").style.height = height + "%";
@@ -47,48 +48,47 @@ if(window.matchMedia('(max-device-width: 960px)').matches){
             }
         }
         losuj_litere();
-        };
-
-    }else{
-   // alert("ok");
-document.addEventListener('keypress', function (e) {
-    if (startGame == true) {
-        let clickLetter = e.key.charCodeAt(0);
-        let clickLetterUpper = clickLetter - 32;
-        let ascii = document.getElementById("litera").innerHTML;
-        ascii = ascii.charCodeAt(0);
-        let good = parseInt(document.getElementById("good").innerHTML);
-        let bad = parseInt(document.getElementById("bad").innerHTML);
-        if (ascii == clickLetterUpper) {
-            good += 1;
-            let height = good * 5;
-            document.getElementById("good").innerHTML = good;
-            document.querySelector(".grow-green").style.height = height + "%";
-
-            if (good > 19) {
-                let time = document.getElementById("timer").innerHTML;
-                document.querySelector(".game__end--win").style.display = "unset";
-                document.querySelector(".game__time").innerHTML = time;
-                clearInterval(odliczanie);
-                win.play();
-                startGame = false;
-            }
-        } else {
-            no.play();
-            bad += 1;
-            let height = bad * 20;
-            document.getElementById("bad").innerHTML = bad;
-            document.querySelector(".grow-red").style.height = height + "%";
-            if (bad > 4) {
-                document.querySelector(".game__end--loss").style.display = "unset";
-                clearInterval(odliczanie);
-                loss.play();
-                startGame = false;
-            }
-        }
-        losuj_litere();
-    }
+    };
 });
+} else {
+    document.addEventListener('keypress', function (e) {
+        if (startGame == true) {
+            let clickLetter = e.key.charCodeAt(0);
+            let clickLetterUpper = clickLetter - 32;
+            let ascii = document.getElementById("litera").innerHTML;
+            ascii = ascii.charCodeAt(0);
+            let good = parseInt(document.getElementById("good").innerHTML);
+            let bad = parseInt(document.getElementById("bad").innerHTML);
+            if (ascii == clickLetterUpper) {
+                good += 1;
+                let height = good * 5;
+                document.getElementById("good").innerHTML = good;
+                document.querySelector(".grow-green").style.height = height + "%";
+
+                if (good > 19) {
+                    let time = document.getElementById("timer").innerHTML;
+                    document.querySelector(".game__end--win").style.display = "unset";
+                    document.querySelector(".game__time").innerHTML = time;
+                    clearInterval(odliczanie);
+                    win.play();
+                    startGame = false;
+                }
+            } else {
+                no.play();
+                bad += 1;
+                let height = bad * 20;
+                document.getElementById("bad").innerHTML = bad;
+                document.querySelector(".grow-red").style.height = height + "%";
+                if (bad > 4) {
+                    document.querySelector(".game__end--loss").style.display = "unset";
+                    clearInterval(odliczanie);
+                    loss.play();
+                    startGame = false;
+                }
+            }
+            losuj_litere();
+        }
+    });
 };
 
 function timer() {
@@ -123,8 +123,10 @@ start__button.addEventListener("click", function () {
     losuj_litere();
     start__button.style.display = "none";
     restart__button.style.display = "unset";
-  
-    
+    if (window.matchMedia('(max-device-width: 960px)').matches){
+    document.querySelector(".hidden").focus();
+    };
+
 });
 restart__button.addEventListener("click", function () {
     startGame = false;

@@ -241,5 +241,6 @@ body {
 
 .hidden {
   position: fixed;
+  left: 120%;
 }
 /*# sourceMappingURL=style.css.map */
