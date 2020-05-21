@@ -239,8 +239,7 @@ body {
   z-index: 20;
 }
 
-#hidden {
+.hidden {
   position: fixed;
-  left: 120%;
 }
 /*# sourceMappingURL=style.css.map */
