@@ -26,14 +26,17 @@ body {
     align-items: center;
     @media (max-width: 991px) {
         width: 98vw;
-        height: 98vh;
-        min-height: min-content;
+        height: min-content;
+        min-height: 98vh;
         margin:auto;
     }
 
 }
 .game__title {
     text-transform: uppercase;
+    @media (max-width: 991px) {
+        font-size: 25px;
+    }
 }
 .button {
     width: 30vw;
@@ -52,7 +55,9 @@ body {
         background-color: #f85db4;
     }
     @media (max-width: 991px) {
-width: 80vw;
+    width: 80vw;
+    font-size: 16px;
+    padding: 3vh;
     }
 }
 .start__button {
@@ -71,7 +76,9 @@ width: 80vw;
     position: relative;
     @media (max-width: 991px) {
         width: 80vw;
-        height: 100px;
+        height: 20vh;
+        min-height: 80px;
+        max-height: 200px;
     }
 }
 .letter__container {
@@ -86,7 +93,10 @@ width: 80vw;
     border-radius: 5px;
     @media (max-width: 991px) {
         width: 30vw;
-        height: 100px;
+        height: 20vh;
+        min-height: 80px;
+        max-height: 200px;
+        font-size: 80px;
     }
 }
 .licznik {
@@ -149,7 +159,8 @@ width: 80vw;
     border-radius: 5px;
     display: none;
     @media (max-width: 991px) {
-        width: 80vw;
+        width: 90vw;
+        font-size: 15px;
         height: min-content;
     }
 }
@@ -161,6 +172,10 @@ width: 80vw;
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
+    @media (max-width: 991px) {
+        position: unset;
+        font-size: 25px;
+    }
 }
 .game__end--loss {
     @extend .game__end;

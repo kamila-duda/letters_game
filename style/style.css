@@ -46,16 +46,22 @@ body {
 @media (max-width: 991px) {
   .game__container {
     width: 98vw;
-    height: 98vh;
-    min-height: -webkit-min-content;
-    min-height: -moz-min-content;
-    min-height: min-content;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    min-height: 98vh;
     margin: auto;
   }
 }
 
 .game__title {
   text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .game__title {
+    font-size: 25px;
+  }
 }
 
 .button, .start__button, .restart__button {
@@ -81,6 +87,8 @@ body {
 @media (max-width: 991px) {
   .button, .start__button, .restart__button {
     width: 80vw;
+    font-size: 16px;
+    padding: 3vh;
   }
 }
 
@@ -104,7 +112,9 @@ body {
 @media (max-width: 991px) {
   .display__container {
     width: 80vw;
-    height: 100px;
+    height: 20vh;
+    min-height: 80px;
+    max-height: 200px;
   }
 }
 
@@ -129,7 +139,10 @@ body {
 @media (max-width: 991px) {
   .letter__container {
     width: 30vw;
-    height: 100px;
+    height: 20vh;
+    min-height: 80px;
+    max-height: 200px;
+    font-size: 80px;
   }
 }
 
@@ -218,7 +231,8 @@ body {
 
 @media (max-width: 991px) {
   .game__end, .game__end--loss, .game__end--win {
-    width: 80vw;
+    width: 90vw;
+    font-size: 15px;
     height: -webkit-min-content;
     height: -moz-min-content;
     height: min-content;
@@ -233,6 +247,13 @@ body {
   cursor: pointer;
   font-size: 35px;
   font-weight: bold;
+}
+
+@media (max-width: 991px) {
+  .game__end--button {
+    position: unset;
+    font-size: 25px;
+  }
 }
 
 .game__end--loss {
