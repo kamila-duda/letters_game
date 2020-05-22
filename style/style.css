@@ -47,6 +47,9 @@ body {
   .game__container {
     width: 98vw;
     height: 98vh;
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
+    min-height: min-content;
     margin: auto;
   }
 }
@@ -216,6 +219,9 @@ body {
 @media (max-width: 991px) {
   .game__end, .game__end--loss, .game__end--win {
     width: 80vw;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
   }
 }
 

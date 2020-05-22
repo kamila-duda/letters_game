@@ -27,6 +27,7 @@ body {
     @media (max-width: 991px) {
         width: 98vw;
         height: 98vh;
+        min-height: min-content;
         margin:auto;
     }
 
@@ -149,6 +150,7 @@ width: 80vw;
     display: none;
     @media (max-width: 991px) {
         width: 80vw;
+        height: min-content;
     }
 }
 .game__end--button {
