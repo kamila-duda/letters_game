@@ -6,6 +6,9 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url("../images/cute.jpg");
+  background-color: pink;
+  background-size: cover;
 }
 
 .container {
@@ -15,10 +18,7 @@ body {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
-  min-height: 100vh;
-  background-image: url("../images/cute.jpg");
-  background-color: pink;
-  background-size: cover;
+  min-height: 98vh;
   font-family: arial;
 }
 
@@ -269,5 +269,11 @@ body {
 .hidden {
   position: fixed;
   left: 120%;
+}
+
+.footer {
+  height: 2vh;
+  font-size: 10px;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
