@@ -23,22 +23,21 @@
 			<div class="display__container">
 				<div class="licznik">Dobrze
 					<div class="grow-green"></div>
-					<div id="good">0</div>
+					<div class="good">0</div>
 				</div>
-				<div class="letter__container" id="litera"></div>
+				<div class="letter__container"></div>
 				<div class="licznik">Źle
 					<div class="grow-red"></div>
-					<div id="bad">0</div>
+					<div class="bad">0</div>
 				</div>
 			</div>
-			<div id="timer">0 sec.</div>
-			<div class="game__end--loss">
-				<p>Popełniłeś 5 błędów. Koniec gry.</p>
-				<div class="game__end--button" id="lossClose">Zamknij</div>
-			</div>
-			<div class="game__end--win">
-				<p>Brawo! 20 poprawnych odpowiedzi.Twój czas: <span class="game__time"></span></p>
-				<div class="game__end--button" id="winClose">Zamknij</div>
+			<div class="timer">0 sec.</div>
+			<div class="game__end game__end--hidden">
+				<div class="game__endButton">❌</div>
+				<p class="game__endDescription"></p>
+				<p class="game__endRecord"></p>
+				<p class="game__theBestTime"></p>
+				
 			</div>
 		</div>
 	</main>

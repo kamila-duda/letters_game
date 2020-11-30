@@ -12,8 +12,14 @@ body {
     display: flex;
     height: min-content;
     min-height: 98vh;
-    
     font-family: arial;
+}
+.score__container{
+    position: absolute;
+    width: 20vw;
+    height: min-content;
+    margin: 20px;
+    border: 2px solid black;
 }
 .game__container {
     width: 40vw;
@@ -133,7 +139,7 @@ body {
     bottom: 0;
     z-index: -1;
 }
-#timer {
+.timer {
     background-color: #f76fca;
     display: flex;
     justify-content: center;
@@ -155,28 +161,30 @@ body {
     right: auto;
     padding: 50px;
     text-align: center;
-    outline: 5px dashed #fff;
-    outline-offset: -30px;
+    outline: 2px dashed #fff;
+    outline-offset: -10px;
     border-radius: 5px;
-    display: none;
+    box-shadow: 10px 10px 15px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     @media (max-width: 991px) {
         width: 90vw;
         font-size: 15px;
         height: min-content;
     }
 }
-.game__end--button {
+.game__end--hidden{
+    display: none;
+}
+.game__endButton {
     position: absolute;
-    bottom: 60px;
-    left: 0;
-    right: 0;
+    top: 10px;
+    right: 15px;
     cursor: pointer;
     font-size: 35px;
     font-weight: bold;
-    @media (max-width: 991px) {
-        position: unset;
-        font-size: 25px;
-    }
 }
 .game__end--loss {
     @extend .game__end;
