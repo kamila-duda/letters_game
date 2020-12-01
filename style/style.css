@@ -225,13 +225,14 @@ body {
 
 .game__end, .game__end--loss, .game__end--win {
   position: absolute;
-  font-size: 25px;
+  font-size: 20px;
   height: 50%;
   width: 50%;
   top: 25%;
   left: auto;
   right: auto;
   padding: 50px;
+  color: white;
   text-align: center;
   outline: 2px dashed #fff;
   outline-offset: -10px;
