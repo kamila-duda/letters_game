@@ -1,5 +1,5 @@
 # Letters game
-
+Demo: <a href="https://kamila-duda.github.io/letters_game/" target="_blank">https://kamila-duda.github.io/letters_game/</a>
 ## Table of contents
 
 - [General info](#general-info)
